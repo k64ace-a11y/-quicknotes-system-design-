@@ -1,0 +1,95 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>QuickNotes System Design</title>
+
+    <!-- Link the CSS file -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Load JavaScript after the HTML is ready -->
+    <script src="api.js" defer></script>
+</head>
+<body>
+
+    <header>
+        <h1>QuickNotes</h1>
+        <p>Capture your ideas and keep your notes organized.</p>
+    </header>
+
+    <main>
+        <!-- Section for displaying notes -->
+        <section>
+            <h2>Your Notes</h2>
+
+            <button id="load-btn" type="button">
+                Load notes
+            </button>
+
+            <!-- Displays loading, success and error messages -->
+            <p id="status" class="status" role="status" aria-live="polite">
+                Click "Load notes" to fetch notes from the server.
+            </p>
+
+            <!-- JavaScript will insert notes here -->
+            <ul id="notes-list"></ul>
+        </section>
+
+        <!-- Form for creating a note -->
+        <section>
+            <h2>Create a New Note</h2>
+
+            <form id="note-form">
+                <div>
+                    <label for="title-input">Note Title:</label>
+                    <input
+                        type="text"
+                        id="title-input"
+                        name="title"
+                        maxlength="100"
+                        placeholder="Enter your note title"
+                        required
+                    >
+                </div>
+
+                <div>
+                    <label for="body-input">Note Body:</label>
+                    <textarea
+                        id="body-input"
+                        name="body"
+                        rows="5"
+                        placeholder="Write your note here (optional)"
+                    ></textarea>
+                </div>
+
+                <button id="submit-btn" type="submit">
+                    Create note
+                </button>
+            </form>
+        </section>
+
+        <!-- Project information -->
+        <section>
+            <h2>About QuickNotes</h2>
+
+            <p>
+                QuickNotes is a simple note-taking application
+                that uses a REST API to load, create and delete notes.
+            </p>
+
+            <p>
+                This project uses JSONPlaceholder as a practice API.
+                Changes made through POST and DELETE are not permanently saved.
+            </p>
+        </section>
+    </main>
+
+    <footer>
+        <p>QuickNotes System Design Project</p>
+    </footer>
+
+</body>
+</html>
